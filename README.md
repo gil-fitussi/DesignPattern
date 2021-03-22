@@ -1,6 +1,7 @@
 <h1>Design Pattern</h1>
 
 <h2>Creational<h2> 
+ 
 <h3>Singleton</h3> 
 The singleton pattern restricts the initialization of a class to ensure that only one instance of the class can be created. 
 
