@@ -38,5 +38,10 @@ namespace Observer.Models
                 obs.Update(this);
             }
         }
+
+        public void UnRegister(IObserver observer)
+        {
+            Observers.Remove(observer);
+        }
     }
 }

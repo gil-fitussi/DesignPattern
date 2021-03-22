@@ -16,13 +16,24 @@ namespace Observer
             weatherStation.Attach(channel12);
             weatherStation.Attach(channel13);
 
-            while (true)
+            bool endProgram = false;
+            while (!endProgram)
             {
-                Console.WriteLine("Insert Update Temperature:");
+                Console.WriteLine("Press X For Exit OR Insert Update Temperature:");
                 var tempRead = Console.ReadLine();
-                float.TryParse(tempRead, out float temp);
-                weatherStation.Temperature = temp;
+                if (tempRead.Equals("X"))
+                    endProgram = true;
+                else
+                {
+                    float.TryParse(tempRead, out float temp);
+                    weatherStation.Temperature = temp;
+                }
             }
+
+            weatherStation.UnRegister(channel11);
+            weatherStation.UnRegister(channel12);
+            weatherStation.UnRegister(channel13);
+
         }
     }
 }

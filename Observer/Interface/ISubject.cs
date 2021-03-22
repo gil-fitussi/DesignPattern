@@ -8,5 +8,6 @@ namespace Observer.Interface
     {
         void Attach(IObserver observer);
         void Notify();
+        void UnRegister(IObserver observer);
     }
 }
