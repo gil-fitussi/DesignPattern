@@ -1,24 +1,21 @@
 ﻿using Composite.Interface;
+using Composite.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Composite.Composite
 {
-    public class Manager : IEmployee
+    public class Manager : Employee
     {
         public List<IEmployee> SubOrdinates;
-        public string Name { get; set; }
-        public string Department { get; set; }
-
-        public Manager(string name, string department)
+ 
+        public Manager(string name, string department) : base(name, department)
         {
-            Name = name;
-            Department = department;
             SubOrdinates = new List<IEmployee>();
         }
 
-        public void GetDetails()
+        public override void GetDetails()
         {
             Console.WriteLine($"Name: {Name}, Department: {Department}");
             foreach (var sub in SubOrdinates)

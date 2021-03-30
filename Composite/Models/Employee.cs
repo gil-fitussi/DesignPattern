@@ -17,7 +17,7 @@ namespace Composite.Models
             Department = department;
         }
 
-        public void GetDetails()
+        public virtual void GetDetails()
         {
             Console.WriteLine($"Name: {Name}, Department: {Department}");
         }
